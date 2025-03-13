@@ -1,13 +1,13 @@
 // Catálogo de programas de la Universidad San Mateo
 const catalogo = [
-  { id: 1, nombre: "Ingeniería de Sistemas", duracion: "8 semestres" },
-  { id: 2, nombre: "Administración de Empresas", duracion: "8 semestres" },
-  { id: 3, nombre: "Derecho", duracion: "10 semestres" }
+    { id: 1, nombre: "Ingeniería de Sistemas", duracion: "8 semestres" },
+    { id: 2, nombre: "Administración de Empresas", duracion: "8 semestres" },
+    { id: 3, nombre: "Derecho", duracion: "10 semestres" }
 ];
 
 // Mostrar catálogo
 catalogo.forEach(programa => {
-  console.log(`${programa.id}. ${programa.nombre} - ${programa.duracion}`);
+    console.log(`${programa.id}. ${programa.nombre} - ${programa.duracion}`);
 });
 
 
@@ -22,16 +22,17 @@ document.body.innerHTML += `
 
 
 function enviarSolicitud() {
-  const nombre = document.getElementById("nombre").value;
-  const programaId = document.getElementById("programaId").value;
+    const nombre = document.getElementById("nombre").value;
+    const programaId = document.getElementById("programaId").value;
 
 
-  const solicitud = 'INSERT INTO solicitudes (nombre, programaId) VALUES ('${nombre}', '${programaId}');
-  console.log("Solicitud enviada:", solicitud);
+    const solicitud = `INSERT INTO solicitudes (nombre, programaId) VALUES('${nombre}', '${programaId}')`;
 
-  eval(solicitud);
+    console.log("Solicitud enviada:", solicitud);
 
-  alert("Solicitud enviada correctamente.");
+    eval(solicitud);
+
+    alert("Solicitud enviada correctamente.");
 }
 
 
